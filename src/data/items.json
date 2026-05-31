@@ -1,0 +1,807 @@
+[
+  {
+    "id": "glock-19",
+    "name": "Glock 19",
+    "type": "weapon",
+    "rarity": "Common",
+    "tier": 1,
+    "description": "Light sidearm for new players with fast draw speed, cheap ammo cost, and steady entry-level value for simple city jobs and everyday protection.",
+    "tags": [
+      "Low recoil",
+      "Fast draw"
+    ],
+    "image": "glock-19.png",
+    "stats": {
+      "damage": 28,
+      "range": 35,
+      "fireRate": 72,
+      "recoil": 20
+    }
+  },
+  {
+    "id": "mini-smg",
+    "name": "Mini SMG",
+    "type": "weapon",
+    "rarity": "Rare",
+    "tier": 1.5,
+    "description": "Compact automatic weapon built for vehicle fights, alley pushes, and fast faction rotations where close-range pressure matters more than precision.",
+    "tags": [
+      "Close range",
+      "Vehicle use"
+    ],
+    "image": "mini-smg.png",
+    "stats": {
+      "damage": 34,
+      "range": 28,
+      "fireRate": 90,
+      "recoil": 38
+    }
+  },
+  {
+    "id": "combat-pistol",
+    "name": "Combat Pistol",
+    "type": "weapon",
+    "rarity": "Common",
+    "tier": 1,
+    "description": "Reliable sidearm with a larger magazine than the Glock, suited for extended firefights where ammo management matters.",
+    "tags": [
+      "High ammo",
+      "Reliable"
+    ],
+    "stats": {
+      "damage": 30,
+      "range": 38,
+      "fireRate": 65,
+      "recoil": 22
+    }
+  },
+  {
+    "id": "carbine-rifle",
+    "name": "Carbine Rifle",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 2,
+    "description": "Full-auto mid-range rifle used by experienced faction players. Strong damage output and solid accuracy for open street engagements.",
+    "tags": [
+      "Mid range",
+      "Full auto"
+    ],
+    "stats": {
+      "damage": 56,
+      "range": 70,
+      "fireRate": 82,
+      "recoil": 42
+    }
+  },
+  {
+    "id": "special-carbine",
+    "name": "Special Carbine",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 2,
+    "description": "Upgraded carbine variant with slightly improved handling. Preferred by players who want more accuracy in medium-range faction pushes.",
+    "tags": [
+      "Mid range",
+      "Accurate"
+    ],
+    "stats": {
+      "damage": 58,
+      "range": 72,
+      "fireRate": 80,
+      "recoil": 38
+    }
+  },
+  {
+    "id": "pump-shotgun",
+    "name": "Pump Shotgun",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1.5,
+    "description": "Slow but devastating at close range. One shot can drop a target indoors. Best used in tight spaces and building rushes.",
+    "tags": [
+      "High damage",
+      "Close range"
+    ],
+    "stats": {
+      "damage": 80,
+      "range": 18,
+      "fireRate": 25,
+      "recoil": 65
+    }
+  },
+  {
+    "id": "smg",
+    "name": "SMG",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1.5,
+    "description": "Standard submachine gun with good spray control. Effective for both vehicle combat and on-foot chases around the city.",
+    "tags": [
+      "Versatile",
+      "Mobile"
+    ],
+    "stats": {
+      "damage": 38,
+      "range": 40,
+      "fireRate": 88,
+      "recoil": 32
+    }
+  },
+  {
+    "id": "heavy-pistol",
+    "name": "Heavy Pistol",
+    "type": "weapon",
+    "rarity": "Rare",
+    "tier": 2,
+    "description": "Upgraded pistol with significantly better stopping power. Often used as a secondary by mid-tier faction players.",
+    "tags": [
+      "High stopping power",
+      "Secondary"
+    ],
+    "stats": {
+      "damage": 45,
+      "range": 42,
+      "fireRate": 60,
+      "recoil": 28
+    }
+  },
+  {
+    "id": "actavis-syrup",
+    "name": "Actavis Syrup",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "25% Health Regen. Stamina regeneration until restart. -20% Movement Speed for 600s. Vehicle handling -10% for 600s.",
+    "tags": [
+      "Health regen",
+      "Stamina"
+    ],
+    "image": "drugs/actavis_syrup.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Heavy sedation, euphoria",
+      "weight": "0.5 kg"
+    }
+  },
+  {
+    "id": "adderall",
+    "name": "Adderall",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Removes worst screenshake. Gives SpotEmGotEm skill until restart. -10% Health instantly. -10% Slower until restart.",
+    "tags": [
+      "SpotEmGotEm",
+      "Focus"
+    ],
+    "image": "drugs/adderall.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Focus boost, reduced screenshake",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "alg",
+    "name": "ALG",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "30% Health Regen boost. Slowed movement for 300s.",
+    "tags": [
+      "Health regen"
+    ],
+    "image": "drugs/alg.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Health regen, slowed movement",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "blue-xanax",
+    "name": "Blue Xanax",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "100% Health Regen. 10% Health Regen. Makes you slower for 300s.",
+    "tags": [
+      "Health regen",
+      "Sedation"
+    ],
+    "image": "drugs/blue_xanax.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Health regen, slowed movement",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "blue-dream",
+    "name": "Blue Dream",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "15% Health Regen. Reduced aim sway for 600s. -10% Speed for 600s. Stamina reduction for 600s.",
+    "tags": [
+      "Health regen",
+      "Aim sway"
+    ],
+    "image": "drugs/bluedream.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Health regen, reduced aim sway",
+      "weight": "0.3 kg"
+    }
+  },
+  {
+    "id": "cocaine",
+    "name": "Cocaine",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "+10% Run Speed for 300s. +15% Stamina Regen for 300s. -8% Health instantly. -10% Stamina Regen for 180s.",
+    "tags": [
+      "Run speed",
+      "Stamina"
+    ],
+    "image": "drugs/cocaine.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Run speed, stamina regen",
+      "weight": "0.3 kg"
+    }
+  },
+  {
+    "id": "codeine-syrup",
+    "name": "Codeine Syrup",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "25% Health Regen. Stamina regeneration until restart. -20% Movement Speed for 600s. Vehicle handling -10% for 600s.",
+    "tags": [
+      "Health regen",
+      "Stamina"
+    ],
+    "image": "drugs/codeine_syrup.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Health regen, slowed movement",
+      "weight": "0.4 kg"
+    }
+  },
+  {
+    "id": "crack",
+    "name": "Crack",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "+10 Armor (reactive on bullet). +20% Melee Damage for 180s. -5% Health instantly. Stamina drain for 240s.",
+    "tags": [
+      "Reactive armor",
+      "Melee"
+    ],
+    "image": "drugs/crack.png",
+    "stats": {
+      "duration": "180s",
+      "effect": "Reactive armor, melee damage",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "flakka",
+    "name": "Flakka",
+    "type": "drug",
+    "rarity": "Epic",
+    "description": "+25% Speed for 300s. +30% Melee Damage for 300s. -25% Health (crash damage). Stamina drain for 300s.",
+    "tags": [
+      "Speed",
+      "Melee"
+    ],
+    "image": "drugs/flakka.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Speed boost, melee damage",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "gg-pill",
+    "name": "GG Pill",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Adrenaline Rush skill until restart. 50% Health Regen. -5% Health instantly. -15% Stamina Regen for 300s.",
+    "tags": [
+      "Adrenaline Rush",
+      "Health regen"
+    ],
+    "image": "drugs/ggpill.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Adrenaline rush, health regen",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "grenades-pill",
+    "name": "Grenades",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Adrenaline Rush skill until restart. 50% Health Regen. -5% Health instantly. -15% Stamina Regen for 300s.",
+    "tags": [
+      "Adrenaline Rush",
+      "Health regen"
+    ],
+    "image": "drugs/grenades_pill.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Adrenaline rush, health regen",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "heroin",
+    "name": "Heroin",
+    "type": "drug",
+    "rarity": "Legendary",
+    "description": "25% Armor (reactive). 10% Health Regen. -30% Movement Speed until restart. -10% Health after effect.",
+    "tags": [
+      "Reactive armor",
+      "Health regen"
+    ],
+    "image": "drugs/heroin.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Reactive armor, slowed movement",
+      "weight": "0.3 kg"
+    }
+  },
+  {
+    "id": "hitec-syrup",
+    "name": "Hi-Tec Syrup",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "25% Health Regen. Stamina regeneration until restart. -20% Movement Speed for 600s. Vehicle handling -10% for 600s.",
+    "tags": [
+      "Health regen",
+      "Stamina"
+    ],
+    "image": "drugs/hitec_syrup.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Health regen, slowed movement",
+      "weight": "0.5 kg"
+    }
+  },
+  {
+    "id": "hydrocodone",
+    "name": "Hydrocodone",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/hydrocodone.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "hydrocodone-30",
+    "name": "Hydrocodone 30",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/hydrocodone30.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "k2",
+    "name": "K2",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "+10% Damage Resistance for 300s. -20% Health (severe loss). Hallucinations for 300s.",
+    "tags": [
+      "Damage resistance"
+    ],
+    "image": "drugs/k2.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Damage resistance, hallucinations",
+      "weight": "0.2 kg"
+    }
+  },
+  {
+    "id": "ketamine",
+    "name": "Ketamine",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "+10% Damage Resistance for 300s. 15% Health Regen. Slowed movement for 300s. Disorientation for 300s.",
+    "tags": [
+      "Damage resistance",
+      "Health regen"
+    ],
+    "image": "drugs/ketamine.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Damage resistance, health regen",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "lsd",
+    "name": "LSD (Acid)",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "20% Health Regen. Reduced aim sway for 600s. -10% Speed for 600s. Visual distortion for 600s.",
+    "tags": [
+      "Health regen",
+      "Aim sway"
+    ],
+    "image": "drugs/lsd.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Health regen, reduced aim sway",
+      "weight": "0.01 kg"
+    }
+  },
+  {
+    "id": "mdma",
+    "name": "MDMA",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Adrenaline Rush skill until restart. 50% Health Regen. -5% Health instantly. -15% Stamina Regen for 300s.",
+    "tags": [
+      "Adrenaline Rush",
+      "Health regen"
+    ],
+    "image": "drugs/mdma.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Adrenaline rush, health regen",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "meth",
+    "name": "Methamphetamine",
+    "type": "drug",
+    "rarity": "Epic",
+    "description": "+20% Run Speed for 420s. +25% Stamina Regen for 420s. -12% Health instantly. -30% Stamina Regen for 300s.",
+    "tags": [
+      "Run speed",
+      "Stamina"
+    ],
+    "image": "drugs/meth.png",
+    "stats": {
+      "duration": "420s",
+      "effect": "Run speed, stamina regen",
+      "weight": "0.2 kg"
+    }
+  },
+  {
+    "id": "og-kush",
+    "name": "OG Kush",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "+10 Melee Damage for 600s. +5% Damage Resistance for 600s. -5% Run Speed for 600s. Increased aim sway for 600s.",
+    "tags": [
+      "Melee",
+      "Damage resistance"
+    ],
+    "image": "drugs/ogkush.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Melee damage, damage resistance",
+      "weight": "0.3 kg"
+    }
+  },
+  {
+    "id": "opioids",
+    "name": "Opioids",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/opioids.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "oxycodone-purple",
+    "name": "Purple Oxycodone",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/oxycodon_purple.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "oxycodone",
+    "name": "Oxycodone",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/oxycodone.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "oxycodone-90",
+    "name": "Oxycodone 90",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/oxycodone90.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "oxycodons",
+    "name": "Oxycodons",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/oxycodons.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.3 kg"
+    }
+  },
+  {
+    "id": "pcp",
+    "name": "PCP",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "+25% Melee Damage for 300s. +10% Damage Resistance for 300s. -15% Health instantly. Stamina drain for 300s.",
+    "tags": [
+      "Melee",
+      "Damage resistance"
+    ],
+    "image": "drugs/pcp.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Melee damage, damage resistance",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "percocet",
+    "name": "Percocet",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Gives Headshot King skill until restart. 8% Armor (reactive). -30% Health (Fentanyl). -25% Dehydration.",
+    "tags": [
+      "Headshot King",
+      "Reactive armor"
+    ],
+    "image": "drugs/percocet.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Headshot king, reactive armor",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "purple-haze",
+    "name": "Purple Haze",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "+15% Health Regen. SpotEmGotEm skill until restart. Gets hungrier. Vehicle handling -5% for 600s.",
+    "tags": [
+      "Health regen",
+      "SpotEmGotEm"
+    ],
+    "image": "drugs/purplehaze.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Health regen, spotEmGotEm",
+      "weight": "0.3 kg"
+    }
+  },
+  {
+    "id": "shrooms",
+    "name": "Shrooms",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "20% Health Regen. 5% Damage Resistance for 600s. Increased aim sway for 600s. Hallucinations for 600s.",
+    "tags": [
+      "Health regen",
+      "Damage resistance"
+    ],
+    "image": "drugs/shrooms.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Health regen, damage resistance",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "sour-diesel",
+    "name": "Sour Diesel",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "+5% Run Speed for 600s. +10% Stamina Regen for 600s. Stamina drains faster when sprinting. Mild blur for 600s.",
+    "tags": [
+      "Run speed",
+      "Stamina"
+    ],
+    "image": "drugs/sourdiesel.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Run speed, stamina regen",
+      "weight": "0.3 kg"
+    }
+  },
+  {
+    "id": "spice",
+    "name": "Spice",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "+10% Damage Resistance for 300s. -20% Health (severe loss). Hallucinations for 300s.",
+    "tags": [
+      "Damage resistance"
+    ],
+    "image": "drugs/spice.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Damage resistance, hallucinations",
+      "weight": "0.2 kg"
+    }
+  },
+  {
+    "id": "spongebobs",
+    "name": "Spongebobs",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Adrenaline Rush skill until restart. 50% Health Regen. -5% Health instantly. -15% Stamina Regen for 300s.",
+    "tags": [
+      "Adrenaline Rush",
+      "Health regen"
+    ],
+    "image": "drugs/spongebobs.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Adrenaline rush, health regen",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "steroids",
+    "name": "Steroids",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "+20% Melee Damage until restart. +10% Damage Resistance until restart. -15% Stamina Regen for 300s.",
+    "tags": [
+      "Melee",
+      "Damage resistance"
+    ],
+    "image": "drugs/steroids.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Melee damage, damage resistance",
+      "weight": "0.2 kg"
+    }
+  },
+  {
+    "id": "supermans",
+    "name": "Supermans",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Adrenaline Rush skill until restart. 50% Health Regen. -5% Health instantly. -15% Stamina Regen for 300s.",
+    "tags": [
+      "Adrenaline Rush",
+      "Health regen"
+    ],
+    "image": "drugs/supermans.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Adrenaline rush, health regen",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "telsas",
+    "name": "Telsas",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Adrenaline Rush skill until restart. 50% Health Regen. -5% Health instantly. -15% Stamina Regen for 300s.",
+    "tags": [
+      "Adrenaline Rush",
+      "Health regen"
+    ],
+    "image": "drugs/telsas.png",
+    "stats": {
+      "duration": "Until restart",
+      "effect": "Adrenaline rush, health regen",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "thc",
+    "name": "THC Wax",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "10% Health Regen. Reduced aim sway for 600s. -5% Speed for 600s. Stamina reduction for 600s.",
+    "tags": [
+      "Health regen",
+      "Aim sway"
+    ],
+    "image": "drugs/thc.png",
+    "stats": {
+      "duration": "600s",
+      "effect": "Health regen, reduced aim sway",
+      "weight": "0.05 kg"
+    }
+  },
+  {
+    "id": "whippets",
+    "name": "Whippets",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "+5% Speed burst for 120s. -20% Stamina Regen for 120s.",
+    "tags": [
+      "Speed"
+    ],
+    "image": "drugs/whippets.png",
+    "stats": {
+      "duration": "120s",
+      "effect": "Speed burst, stamina drop",
+      "weight": "0.1 kg"
+    }
+  },
+  {
+    "id": "xanax",
+    "name": "Xanax",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "100% Health Regen. 10% Health Regen. Makes you slower for 300s.",
+    "tags": [
+      "Health regen",
+      "Sedation"
+    ],
+    "image": "drugs/xanax.png",
+    "stats": {
+      "duration": "300s",
+      "effect": "Health regen, slowed movement",
+      "weight": "0.05 kg"
+    }
+  }
+]
