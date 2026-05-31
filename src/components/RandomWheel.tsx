@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { Dices } from "lucide-react";
+import { Dices, Crosshair } from "lucide-react";
 import { weapons, drugs, type Item } from "@/data/items";
 import { ItemCard } from "./ItemCard";
 import { ItemModal } from "./ItemModal";
