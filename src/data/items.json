@@ -1,5 +1,32 @@
 [
   {
+    "id": "alg",
+    "name": "ALG",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "A blend of oxycodone with a strong, addictive high. Manufactured as a blue pill, often mimicked via fake tablets.",
+    "tags": ["Bonus Sprint Speed", "+2% Stamina Regen"],
+    "stats": { "price": "$1200 - $1800", "effect": "Sprint speed + stamina regen" }
+  },
+  {
+    "id": "rp10",
+    "name": "RP10",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Strong painkillers used by pill poppers to feel a brief period of euphoria and numbness, giving off a delightful high.",
+    "tags": ["+10 Health Regen", "+10 Health Regen"],
+    "stats": { "price": "$1400 - $2100", "effect": "Health regen, euphoria" }
+  },
+  {
+    "id": "rp30",
+    "name": "RP30",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "A 30MG variant of the RP10; similar oxycodone blend with a stronger high.",
+    "tags": ["+30 Health Regen", "+30 Health Regen"],
+    "stats": { "price": "$1550 - $2300", "effect": "Stronger health regen" }
+  },
+  {
     "id": "tesla-pill",
     "name": "Tesla Pill",
     "type": "drug",
