@@ -17,11 +17,11 @@ export function Hero() {
           <img
             src={logo}
             alt="The Chi: Cinematic Roleplay logo"
-            className="h-20 w-20 rounded-full object-cover shadow-xl ring-2 ring-slate-200/30"
+            className="h-32 w-32 rounded-full object-cover shadow-xl ring-2 ring-slate-200/30 sm:h-40 sm:w-40"
           />
         </div>
         <h1 className="font-display text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
-          Windy City V5 Illegal Area
+          The Chi:Cinematic V1 Illegal Area
         </h1>
         <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
           Browse supply drops and all firearms and drugs windy has to offer.
