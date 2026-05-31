@@ -13,7 +13,7 @@ export type Item = {
   stats: Record<string, string | number>;
 };
 
-export const items = data as Item[];
+export const items = data as unknown as Item[];
 export const weapons = items.filter((i) => i.type === "weapon");
 export const drugs = items.filter((i) => i.type === "drug");
 
