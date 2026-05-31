@@ -119,20 +119,21 @@ export function RandomWheel() {
                 />
               );
             }
-            const isWinner = !rolling && rolled && i === 4 && rolled.id === it.id;
-            const isActive = rolling && highlightIdx === i;
+            const isCenter = i === 4;
+            const isWinner = !rolling && rolled && isCenter && rolled.id === it.id;
             return (
               <button
                 key={`${it.id}-${i}`}
                 onClick={() => setSelected(it)}
                 className={`flex aspect-[3/4] flex-col items-center justify-between rounded-md border p-2 text-center transition hover:border-ring ${
                   isWinner
-                    ? "border-amber-400 bg-amber-400/10 shadow-[0_0_0_2px_rgba(251,191,36,0.5)]"
-                    : isActive
-                      ? "scale-[1.04] border-amber-400 bg-amber-400/15 shadow-[0_0_18px_rgba(251,191,36,0.55)]"
+                    ? "border-amber-400 bg-amber-400/15 shadow-[0_0_24px_rgba(251,191,36,0.6)]"
+                    : isCenter
+                      ? "scale-[1.06] border-amber-400 bg-amber-400/10 shadow-[0_0_18px_rgba(251,191,36,0.5)]"
                       : "border-border bg-card"
-                }`}
+                } ${rolling && isCenter ? "animate-pulse" : ""}`}
               >
+
 
                 <div className="grid h-10 w-10 place-items-center rounded text-amber-400">
                   <Crosshair className="h-6 w-6" />
