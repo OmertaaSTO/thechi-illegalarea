@@ -1,4 +1,5 @@
 import { Package, Box, FolderOpen } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 export function Hero() {
   return (
