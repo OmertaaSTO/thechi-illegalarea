@@ -28,6 +28,7 @@ export function RandomWheel() {
   }, [pool]);
 
   const [reel, setReel] = useState<Item[]>([]);
+  const [highlightIdx, setHighlightIdx] = useState<number>(-1);
   const displayReel = reel.length ? reel : reelItems;
 
   const roll = () => {
@@ -37,6 +38,7 @@ export function RandomWheel() {
     let n = 0;
     const interval = setInterval(() => {
       setReel(Array.from({ length: 9 }, () => pool[Math.floor(Math.random() * pool.length)]));
+      setHighlightIdx(n % 9);
       n++;
       if (n > 18) {
         clearInterval(interval);
@@ -46,11 +48,13 @@ export function RandomWheel() {
           copy[4] = final;
           return copy;
         });
+        setHighlightIdx(4);
         setRolled(final);
         setRolling(false);
       }
     }, 80);
   };
+
 
   return (
     <section className="border-t border-border">
