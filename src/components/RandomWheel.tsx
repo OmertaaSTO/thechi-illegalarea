@@ -28,6 +28,7 @@ export function RandomWheel() {
   }, [pool]);
 
   const [reel, setReel] = useState<Item[]>([]);
+  const [highlightIdx, setHighlightIdx] = useState<number>(-1);
   const displayReel = reel.length ? reel : reelItems;
 
   const roll = () => {
@@ -37,6 +38,7 @@ export function RandomWheel() {
     let n = 0;
     const interval = setInterval(() => {
       setReel(Array.from({ length: 9 }, () => pool[Math.floor(Math.random() * pool.length)]));
+      setHighlightIdx(n % 9);
       n++;
       if (n > 18) {
         clearInterval(interval);
@@ -46,11 +48,13 @@ export function RandomWheel() {
           copy[4] = final;
           return copy;
         });
+        setHighlightIdx(4);
         setRolled(final);
         setRolling(false);
       }
     }, 80);
   };
+
 
   return (
     <section className="border-t border-border">
@@ -116,14 +120,20 @@ export function RandomWheel() {
               );
             }
             const isWinner = !rolling && rolled && i === 4 && rolled.id === it.id;
+            const isActive = rolling && highlightIdx === i;
             return (
               <button
                 key={`${it.id}-${i}`}
                 onClick={() => setSelected(it)}
-                className={`flex aspect-[3/4] flex-col items-center justify-between rounded-md border bg-card p-2 text-center transition hover:border-ring ${
-                  isWinner ? "border-amber-400 shadow-[0_0_0_2px_rgba(251,191,36,0.4)]" : "border-border"
-                } ${rolling ? "animate-pulse" : ""}`}
+                className={`flex aspect-[3/4] flex-col items-center justify-between rounded-md border p-2 text-center transition hover:border-ring ${
+                  isWinner
+                    ? "border-amber-400 bg-amber-400/10 shadow-[0_0_0_2px_rgba(251,191,36,0.5)]"
+                    : isActive
+                      ? "scale-[1.04] border-amber-400 bg-amber-400/15 shadow-[0_0_18px_rgba(251,191,36,0.55)]"
+                      : "border-border bg-card"
+                }`}
               >
+
                 <div className="grid h-10 w-10 place-items-center rounded text-amber-400">
                   <Crosshair className="h-6 w-6" />
                 </div>
