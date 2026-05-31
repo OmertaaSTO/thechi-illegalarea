@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "id": "tesla-pill",
+    "name": "Tesla Pill",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Street-level MDMA pills, imprinted with a 'Tesla' logo. Usually more potent than base MDMA due to unregulated manufacturing; intense hallucinogenic high.",
+    "tags": ["Highly Increased Sprint Speed", "+7% Stamina Regen"],
+    "stats": { "price": "$800 - $1600", "effect": "Sprint speed + stamina regen" }
+  },
+  {
+    "id": "actavis",
+    "name": "Actavis",
+    "type": "drug",
+    "rarity": "Legendary",
+    "description": "Top-shelf purple syrup. Rare, expensive, and highly sought after. Smooth body high.",
+    "tags": ["+15 Armor", "+15 Armor"],
+    "stats": { "price": "$10,000 - $16,000", "effect": "Heavy armor boost" }
+  },
+  {
+    "id": "tris-syrup",
+    "name": "Tris Syrup",
+    "type": "drug",
+    "rarity": "Epic",
+    "description": "A fan-favorite for lean connoisseurs. Smooth and relaxing with a lasting buzz.",
+    "tags": ["+10 Armor", "+10 Armor"],
+    "stats": { "price": "$7,500 - $10,000", "effect": "Armor boost" }
+  },
+  {
+    "id": "wockhardt",
+    "name": "Wockhardt",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Widely available and reliable. Known for putting users into a heavy lean; slows the body.",
+    "tags": ["+7 Armor", "+7 Armor"],
+    "stats": { "price": "$5,000 - $8,000", "effect": "Armor boost, slowed body" }
+  },
+  {
+    "id": "cocaine",
+    "name": "Cocaine",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "A bag of cocaine powder. Delivers a quick, intense burst of energy and confidence, often used before risky plays.",
+    "tags": ["Focus Boost", "+Sharper reaction / energy"],
+    "stats": { "price": "$2200 - $3200", "effect": "Focus, energy burst" }
+  },
+  {
+    "id": "percocet-10",
+    "name": "Percocet 10",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Percocet 10mg pill. A moderate painkiller dose with a smooth, calming effect.",
+    "tags": ["+10 Pain Relief", "+Light euphoria / calm"],
+    "stats": { "price": "$900 - $1400", "effect": "Pain relief, light euphoria" }
+  },
+  {
+    "id": "percocet-30",
+    "name": "Percocet 30",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Percocet 30mg pill. A strong dose that hits harder and lasts longer, popular with heavy users.",
+    "tags": ["+30 Pain Relief", "+Heavy euphoria / numb"],
+    "stats": { "price": "$1500 - $2300", "effect": "Heavy pain relief, numb" }
+  },
+  {
+    "id": "quagen",
+    "name": "Quagen",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Generic purples. Not as potent, but still gets you leaned out. Budget-friendly buzz.",
+    "tags": ["+5 Armor", "+5 Armor"],
+    "stats": { "price": "$3,000 - $6,500", "effect": "Light armor boost" }
+  },
+  {
+    "id": "yellow-tris",
+    "name": "Yellow (Tris)",
+    "type": "drug",
+    "rarity": "Epic",
+    "description": "A yellow variant of the widely popular Tris, with a stronger concentration. Hard to find, but worth the sensational high.",
+    "tags": ["+5 Armor", "+5 Armor"],
+    "stats": { "price": "$3,000 - $6,500", "effect": "Strong armor boost" }
+  },
+  {
+    "id": "meth",
+    "name": "Meth",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "A bag of methamphetamine crystals. Provides a strong stimulant rush, keeping users alert and moving fast.",
+    "tags": ["Stamina Boost", "+Fast sprint / high alert"],
+    "stats": { "price": "$1800 - $2600", "effect": "Stamina, sprint speed" }
+  }
+]
