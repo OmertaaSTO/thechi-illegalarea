@@ -77,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "The Chi:Cinematic V1" },
+      { name: "description", content: "Browse supply drops, skill information, and all firearms and drugs windy has to offer." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "The Chi:Cinematic V1" },
+      { property: "og:description", content: "Browse supply drops, skill information, and all firearms and drugs windy has to offer." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "The Chi:Cinematic V1" },
+      { name: "twitter:description", content: "Browse supply drops, skill information, and all firearms and drugs windy has to offer." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9dcbf78b-8f78-4b75-9e20-987ddcfafa17/id-preview-eb3e2b2a--cbdcde13-e731-41c4-af8f-fca7c2bd5bfe.lovable.app-1780245226152.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/9dcbf78b-8f78-4b75-9e20-987ddcfafa17/id-preview-eb3e2b2a--cbdcde13-e731-41c4-af8f-fca7c2bd5bfe.lovable.app-1780245226152.png" },
     ],
     links: [
       {
