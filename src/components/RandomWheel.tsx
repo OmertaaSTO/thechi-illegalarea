@@ -77,7 +77,7 @@ export function RandomWheel() {
           </div>
           <div className="text-center">
             <div className="text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
-              Windy City V5 · Illegal Area
+              The Chi: Cinematic V1 · Illegal Area
             </div>
             <h2 className="font-display text-4xl font-black tracking-tight sm:text-5xl">RANDOM WHEEL</h2>
           </div>
