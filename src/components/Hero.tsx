@@ -14,9 +14,11 @@ export function Hero() {
       />
       <div className="mx-auto max-w-6xl px-6 pt-16 pb-12 sm:pt-24 sm:pb-20">
         <div className="mb-8 flex items-center gap-4">
-          <div className="grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-slate-300 to-slate-500 text-slate-900 shadow-xl ring-2 ring-slate-200/30">
-            <span className="text-[10px] font-black tracking-tight">WINDY CITY</span>
-          </div>
+          <img
+            src={logo}
+            alt="The Chi: Cinematic Roleplay logo"
+            className="h-20 w-20 rounded-full object-cover shadow-xl ring-2 ring-slate-200/30"
+          />
         </div>
         <h1 className="font-display text-5xl font-black leading-[1.05] tracking-tight sm:text-6xl md:text-7xl">
           Windy City V5 Illegal Area
