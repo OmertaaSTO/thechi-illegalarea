@@ -115,5 +115,75 @@
     "description": "A bag of methamphetamine crystals. Provides a strong stimulant rush, keeping users alert and moving fast.",
     "tags": ["Stamina Boost", "+Fast sprint / high alert"],
     "stats": { "price": "$1800 - $2600", "effect": "Stamina, sprint speed" }
+  },
+  {
+    "id": "sw-sd40-tan",
+    "name": "S&W SD40 TAN",
+    "type": "weapon",
+    "rarity": "Common",
+    "tier": 1,
+    "description": "Tan-finished Smith & Wesson SD40 sidearm. Reliable .40 caliber pistol with a smooth trigger pull and solid stopping power for entry-level carriers.",
+    "tags": ["Low recoil", "Reliable"],
+    "stats": { "damage": 32, "range": 36, "fireRate": 68, "recoil": 24 }
+  },
+  {
+    "id": "fn-502-tactical",
+    "name": "FN 502 TACTICAL",
+    "type": "weapon",
+    "rarity": "Common",
+    "tier": 1,
+    "description": "FN's tactical .22 LR pistol with threaded barrel and optic-ready slide. Quiet, accurate, and easy to control during sustained fire.",
+    "tags": ["Optic ready", "Low recoil"],
+    "stats": { "damage": 26, "range": 38, "fireRate": 75, "recoil": 16 }
+  },
+  {
+    "id": "glock-19x-coyote",
+    "name": "GLOCK 19X COYOTE",
+    "type": "weapon",
+    "rarity": "Common",
+    "tier": 1,
+    "description": "Coyote-tan crossover Glock combining a full-size frame with a compact slide. Balanced carry pistol favored by everyday street operators.",
+    "tags": ["Balanced", "Fast draw"],
+    "stats": { "damage": 30, "range": 36, "fireRate": 72, "recoil": 22 }
+  },
+  {
+    "id": "glock-45-camo",
+    "name": "GLOCK 45 CAMO",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "description": "Camo-wrapped Glock 45 with a 9mm crossover build. Slightly improved accuracy and grip over the standard frame for mid-tier shooters.",
+    "tags": ["Crossover", "Improved grip"],
+    "stats": { "damage": 33, "range": 40, "fireRate": 74, "recoil": 22 }
+  },
+  {
+    "id": "rock-fn57",
+    "name": "ROCK FN57",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "description": "FN Five-seveN chambered in 5.7x28mm with high-capacity magazine. Flat shooting and armor-piercing capable in the right hands.",
+    "tags": ["Armor pierce", "High capacity"],
+    "stats": { "damage": 36, "range": 45, "fireRate": 76, "recoil": 20 }
+  },
+  {
+    "id": "glock-17-black",
+    "name": "GLOCK 17 BLACK",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "description": "Classic full-size 9mm Glock 17 in matte black. The benchmark service pistol — dependable, accurate, and easy to run hard.",
+    "tags": ["Service pistol", "Reliable"],
+    "stats": { "damage": 32, "range": 42, "fireRate": 75, "recoil": 22 }
+  },
+  {
+    "id": "glock-45-gen5",
+    "name": "GLOCK 45 GEN 5",
+    "type": "weapon",
+    "rarity": "Rare",
+    "tier": 1,
+    "description": "Gen 5 Glock 45 with marksman barrel, flared mag well, and refined trigger. A go-to for serious shooters who demand consistency.",
+    "tags": ["Marksman barrel", "Refined trigger"],
+    "stats": { "damage": 36, "range": 46, "fireRate": 78, "recoil": 20 }
   }
 ]
