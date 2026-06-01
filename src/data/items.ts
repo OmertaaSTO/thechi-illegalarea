@@ -7,6 +7,7 @@ export type Item = {
   type: "weapon" | "drug";
   rarity: Rarity;
   tier?: number;
+  testDrop?: boolean;
   description: string;
   tags: string[];
   image?: string;
