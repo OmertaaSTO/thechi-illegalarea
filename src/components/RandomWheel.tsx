@@ -5,88 +5,72 @@ import { ItemCard } from "./ItemCard";
 import { ItemModal } from "./ItemModal";
 
 type Cat = "firearms" | "drugs";
-type Tier = 1 | 1.5 | 2;
-type DropMode = "wheel" | "test";
+type Tier = "test" | 1 | 1.5 | 2;
+
+const TIER_OPTIONS: Tier[] = ["test", 1, 1.5, 2];
+const TIER_LABEL: Record<string, string> = {
+  test: "Test Drops",
+  "1": "Tier 1",
+  "1.5": "Tier 1.5",
+  "2": "Tier 2",
+};
+
+// How many weapons the spin reveals per tier
+const SLOT_COUNT: Record<string, number> = {
+  test: 2,
+  "1": 4,
+  "1.5": 4,
+  "2": 6,
+};
 
 export function RandomWheel() {
   const [cat, setCat] = useState<Cat>("firearms");
-  const [tier, setTier] = useState<Tier>(1);
-  const [mode, setMode] = useState<DropMode>("wheel");
+  const [tier, setTier] = useState<Tier>("test");
   const [selected, setSelected] = useState<Item | null>(null);
   const [rolling, setRolling] = useState(false);
-  const [rolled, setRolled] = useState<Item | null>(null);
-  const [testResults, setTestResults] = useState<Item[]>([]);
+  const [results, setResults] = useState<Item[]>([]);
+  const [reel, setReel] = useState<Item[]>([]);
+
+  const slotCount = cat === "firearms" ? SLOT_COUNT[String(tier)] : 2;
 
   const pool = useMemo(() => {
     if (cat === "firearms") {
-      const firearms = weapons.filter((w) => w.tier === 1);
-      return firearms.slice(0, tier === 2 ? 6 : 4);
+      if (tier === "test") return weapons.filter((w) => w.testDrop);
+      return weapons.filter((w) => w.tier === tier);
     }
-
-    if (tier === 1) return drugs.filter((d) => ["Common", "Uncommon"].includes(d.rarity));
+    if (tier === "test" || tier === 1) return drugs.filter((d) => ["Common", "Uncommon"].includes(d.rarity));
     if (tier === 1.5) return drugs.filter((d) => ["Uncommon", "Rare"].includes(d.rarity));
     return drugs.filter((d) => ["Rare", "Epic", "Legendary"].includes(d.rarity));
   }, [cat, tier]);
 
-  const reelItems = useMemo(() => {
-    if (pool.length === 0) return [] as Item[];
-    return Array.from({ length: 9 }, (_, i) => pool[i % pool.length]);
-  }, [pool]);
+  const displayReel = reel.length
+    ? reel
+    : Array.from({ length: slotCount }, (_, i) => pool[i % Math.max(pool.length, 1)]).filter(Boolean);
 
-  const [reel, setReel] = useState<Item[]>([]);
-  const [highlightIdx, setHighlightIdx] = useState<number>(-1);
-  const displayReel = reel.length ? reel : reelItems;
+  const resetState = () => {
+    setResults([]);
+    setReel([]);
+  };
 
   const roll = () => {
     if (pool.length === 0) return;
-    if (mode === "test") {
-      return testDrop();
-    }
-
     setRolling(true);
-    setRolled(null);
-    setTestResults([]);
+    setResults([]);
     setReel([]);
-    let n = 0;
+
+    let ticks = 0;
+    const totalTicks = 22;
     const interval = setInterval(() => {
-      setReel(Array.from({ length: 9 }, () => pool[Math.floor(Math.random() * pool.length)]));
-      setHighlightIdx(n % 9);
-      n++;
-      if (n > 18) {
+      setReel(Array.from({ length: slotCount }, () => pool[Math.floor(Math.random() * pool.length)]));
+      ticks++;
+      if (ticks >= totalTicks) {
         clearInterval(interval);
-        const final = pool[Math.floor(Math.random() * pool.length)];
-        setReel((prev) => {
-          const copy = [...prev];
-          copy[4] = final;
-          return copy;
-        });
-        setHighlightIdx(4);
-        setRolled(final);
+        const final = Array.from({ length: slotCount }, () => pool[Math.floor(Math.random() * pool.length)]);
+        setReel(final);
+        setResults(final);
         setRolling(false);
       }
     }, 80);
-  };
-
-  const testDrop = () => {
-    if (pool.length === 0) return;
-
-    setRolling(true);
-    setRolled(null);
-    setTestResults([]);
-    setReel([]);
-
-    setTimeout(() => {
-      const available = [...pool];
-      const results: Item[] = [];
-
-      while (results.length < 2 && available.length > 0) {
-        const index = Math.floor(Math.random() * available.length);
-        results.push(available.splice(index, 1)[0]);
-      }
-
-      setTestResults(results);
-      setRolling(false);
-    }, 600);
   };
 
   return (
@@ -100,9 +84,7 @@ export function RandomWheel() {
                   key={c}
                   onClick={() => {
                     setCat(c);
-                    setRolled(null);
-                    setTestResults([]);
-                    setReel([]);
+                    resetState();
                   }}
                   className={`rounded px-4 py-2 text-xs font-semibold uppercase tracking-wider transition ${
                     cat === c ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"
@@ -120,57 +102,30 @@ export function RandomWheel() {
             <h2 className="font-display text-4xl font-black tracking-tight sm:text-5xl">RANDOM WHEEL</h2>
           </div>
           <div className="flex flex-col items-end gap-2">
-            <div className="inline-flex rounded-md border border-border bg-card p-1">
-              {([1, 1.5, 2] as Tier[]).map((t) => (
+            <div className="inline-flex flex-wrap rounded-md border border-border bg-card p-1">
+              {TIER_OPTIONS.map((t) => (
                 <button
-                  key={t}
+                  key={String(t)}
                   onClick={() => {
                     setTier(t);
-                    setRolled(null);
-                    setTestResults([]);
-                    setReel([]);
+                    resetState();
                   }}
                   className={`rounded px-3 py-2 text-xs font-semibold uppercase tracking-wider transition ${
                     tier === t ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"
                   }`}
                 >
-                  Tier {t}
-                </button>
-              ))}
-            </div>
-            <div className="inline-flex rounded-md border border-border bg-card p-1">
-              {(["wheel", "test"] as DropMode[]).map((m) => (
-                <button
-                  key={m}
-                  onClick={() => {
-                    setMode(m);
-                    setRolled(null);
-                    setTestResults([]);
-                    setReel([]);
-                  }}
-                  className={`rounded px-3 py-2 text-xs font-semibold uppercase tracking-wider transition ${
-                    mode === m ? "bg-secondary text-foreground" : "text-muted-foreground hover:text-foreground"
-                  }`}
-                >
-                  {m === "wheel" ? "Wheel" : "Test Drop"}
+                  {TIER_LABEL[String(t)]}
                 </button>
               ))}
             </div>
           </div>
         </div>
 
-        <div className="mt-8 grid grid-cols-10 gap-2">
-          {Array.from({ length: 10 }).map((_, i) => {
-            if (i === 9) {
-              return (
-                <div
-                  key="roll-slot"
-                  className="flex aspect-[3/4] flex-col items-center justify-center rounded-md border border-dashed border-border bg-card/40 text-muted-foreground"
-                >
-                  <Dices className="h-7 w-7" />
-                </div>
-              );
-            }
+        <div
+          className="mt-8 grid gap-2"
+          style={{ gridTemplateColumns: `repeat(${slotCount}, minmax(0, 1fr))` }}
+        >
+          {Array.from({ length: slotCount }).map((_, i) => {
             const it = displayReel[i];
             if (!it) {
               return (
@@ -180,8 +135,7 @@ export function RandomWheel() {
                 />
               );
             }
-            const isCenter = i === 4;
-            const isWinner = !rolling && rolled && isCenter && rolled.id === it.id;
+            const isWinner = !rolling && results.length > 0;
             return (
               <button
                 key={`${it.id}-${i}`}
@@ -189,10 +143,10 @@ export function RandomWheel() {
                 className={`flex aspect-[3/4] flex-col items-center justify-between rounded-md border p-2 text-center transition hover:border-ring ${
                   isWinner
                     ? "border-amber-400 bg-amber-400/15 shadow-[0_0_24px_rgba(251,191,36,0.6)]"
-                    : isCenter
-                      ? "scale-[1.06] border-amber-400 bg-amber-400/10 shadow-[0_0_18px_rgba(251,191,36,0.5)]"
+                    : rolling
+                      ? "scale-[1.04] border-amber-400 bg-amber-400/10 shadow-[0_0_18px_rgba(251,191,36,0.5)] animate-pulse"
                       : "border-border bg-card"
-                } ${rolling && isCenter ? "animate-pulse" : ""}`}
+                }`}
               >
                 <div className="grid h-10 w-10 place-items-center rounded text-amber-400">
                   <Crosshair className="h-6 w-6" />
@@ -209,39 +163,21 @@ export function RandomWheel() {
           disabled={rolling || pool.length === 0}
           className="mt-4 flex w-full items-center justify-center gap-3 rounded-md bg-slate-100 px-6 py-5 text-base font-black uppercase tracking-wider text-slate-900 shadow transition hover:bg-white disabled:opacity-60"
         >
-          <Dices className="h-5 w-5" />
-          {mode === "test" ? "ROLL TEST DROP" : "ROLL RANDOM"}
+          <Dices className={`h-5 w-5 ${rolling ? "animate-spin" : ""}`} />
+          {rolling ? "Rolling..." : `ROLL ${TIER_LABEL[String(tier)].toUpperCase()} (${slotCount})`}
         </button>
 
-        {mode === "test" ? (
+        {results.length > 0 && !rolling && (
           <div className="mt-6 rounded-lg border border-border bg-card p-4">
-            <div className="text-xs uppercase tracking-widest text-muted-foreground">Your Test Drop</div>
-            {testResults.length === 0 ? (
-              <p className="mt-2 text-sm text-muted-foreground">
-                Pick a tier and roll to reveal two items from the current pool.
-              </p>
-            ) : (
-              <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-2">
-                {testResults.map((item) => (
-                  <ItemCard key={item.id} item={item} onClick={() => setSelected(item)} />
-                ))}
-              </div>
-            )}
-          </div>
-        ) : (
-          rolled && !rolling && (
-            <div className="mt-6 rounded-lg border border-border bg-card p-4">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground">Your Drop Result</div>
-              <div className="mt-2 text-2xl font-bold">{rolled.name}</div>
-              <div className="text-sm text-muted-foreground">{rolled.rarity}</div>
-              <button
-                onClick={() => setSelected(rolled)}
-                className="mt-3 rounded-md border border-border bg-secondary px-3 py-1.5 text-xs font-semibold hover:bg-accent"
-              >
-                View details
-              </button>
+            <div className="text-xs uppercase tracking-widest text-muted-foreground">
+              Your {TIER_LABEL[String(tier)]} Drop
             </div>
-          )
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {results.map((item, idx) => (
+                <ItemCard key={`${item.id}-${idx}`} item={item} onClick={() => setSelected(item)} />
+              ))}
+            </div>
+          </div>
         )}
       </div>
       {selected && <ItemModal item={selected} onClose={() => setSelected(null)} />}
