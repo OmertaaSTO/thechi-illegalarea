@@ -122,6 +122,7 @@
     "type": "weapon",
     "rarity": "Common",
     "tier": 1,
+    "testDrop": true,
     "description": "Tan-finished Smith & Wesson SD40 sidearm. Reliable .40 caliber pistol with a smooth trigger pull and solid stopping power for entry-level carriers.",
     "tags": ["Low recoil", "Reliable"],
     "stats": { "damage": 32, "range": 36, "fireRate": 68, "recoil": 24 }
@@ -132,6 +133,7 @@
     "type": "weapon",
     "rarity": "Common",
     "tier": 1,
+    "testDrop": true,
     "description": "FN's tactical .22 LR pistol with threaded barrel and optic-ready slide. Quiet, accurate, and easy to control during sustained fire.",
     "tags": ["Optic ready", "Low recoil"],
     "stats": { "damage": 26, "range": 38, "fireRate": 75, "recoil": 16 }
@@ -142,6 +144,7 @@
     "type": "weapon",
     "rarity": "Common",
     "tier": 1,
+    "testDrop": true,
     "description": "Coyote-tan crossover Glock combining a full-size frame with a compact slide. Balanced carry pistol favored by everyday street operators.",
     "tags": ["Balanced", "Fast draw"],
     "stats": { "damage": 30, "range": 36, "fireRate": 72, "recoil": 22 }
@@ -152,6 +155,7 @@
     "type": "weapon",
     "rarity": "Uncommon",
     "tier": 1,
+    "testDrop": true,
     "description": "Camo-wrapped Glock 45 with a 9mm crossover build. Slightly improved accuracy and grip over the standard frame for mid-tier shooters.",
     "tags": ["Crossover", "Improved grip"],
     "stats": { "damage": 33, "range": 40, "fireRate": 74, "recoil": 22 }
@@ -162,6 +166,7 @@
     "type": "weapon",
     "rarity": "Uncommon",
     "tier": 1,
+    "testDrop": true,
     "description": "FN Five-seveN chambered in 5.7x28mm with high-capacity magazine. Flat shooting and armor-piercing capable in the right hands.",
     "tags": ["Armor pierce", "High capacity"],
     "stats": { "damage": 36, "range": 45, "fireRate": 76, "recoil": 20 }
@@ -172,9 +177,65 @@
     "type": "weapon",
     "rarity": "Uncommon",
     "tier": 1,
+    "testDrop": true,
     "description": "Classic full-size 9mm Glock 17 in matte black. The benchmark service pistol — dependable, accurate, and easy to run hard.",
     "tags": ["Service pistol", "Reliable"],
     "stats": { "damage": 32, "range": 42, "fireRate": 75, "recoil": 22 }
+  },
+  {
+    "id": "mp-9-20",
+    "name": "M&P 9 2.0",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "testDrop": true,
+    "description": "Smith & Wesson M&P 9 2.0 with aggressive grip texturing and a crisp trigger. A modern duty pistol built for accuracy and control.",
+    "tags": ["Duty pistol", "Crisp trigger"],
+    "stats": { "damage": 33, "range": 42, "fireRate": 75, "recoil": 21 }
+  },
+  {
+    "id": "psa-p80-glock-19",
+    "name": "PSA P80 GLOCK 19",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "testDrop": true,
+    "description": "Polymer80 build on a PSA Glock 19 frame. Custom street-ready compact 9mm with an aggressive grip module.",
+    "tags": ["Custom build", "Compact"],
+    "stats": { "damage": 31, "range": 40, "fireRate": 74, "recoil": 22 }
+  },
+  {
+    "id": "glock-20c",
+    "name": "GLOCK 20C",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "testDrop": true,
+    "description": "Compensated Glock 20 chambered in 10mm Auto. Heavy stopping power with a vented barrel to tame muzzle rise.",
+    "tags": ["10mm Auto", "Compensated"],
+    "stats": { "damage": 40, "range": 44, "fireRate": 70, "recoil": 24 }
+  },
+  {
+    "id": "kavorka-glock-43x",
+    "name": "KAVORKA GLOCK 43X",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "testDrop": true,
+    "description": "Slim-frame Glock 43X with Kavorka custom slide work. Concealable single-stack 9mm built for clean carry.",
+    "tags": ["Concealable", "Custom slide"],
+    "stats": { "damage": 30, "range": 38, "fireRate": 76, "recoil": 20 }
+  },
+  {
+    "id": "psa-glock-19",
+    "name": "PSA GLOCK 19",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "testDrop": true,
+    "description": "PSA-built Glock 19 clone. Affordable, reliable, and easy to modify — a workhorse compact 9mm.",
+    "tags": ["Reliable", "Compact"],
+    "stats": { "damage": 31, "range": 40, "fireRate": 75, "recoil": 22 }
   },
   {
     "id": "glock-45-gen5",
@@ -182,8 +243,272 @@
     "type": "weapon",
     "rarity": "Rare",
     "tier": 1,
+    "testDrop": true,
     "description": "Gen 5 Glock 45 with marksman barrel, flared mag well, and refined trigger. A go-to for serious shooters who demand consistency.",
     "tags": ["Marksman barrel", "Refined trigger"],
     "stats": { "damage": 36, "range": 46, "fireRate": 78, "recoil": 20 }
+  },
+  {
+    "id": "glock-45-american",
+    "name": "GLOCK 45 AMERICAN",
+    "type": "weapon",
+    "rarity": "Rare",
+    "tier": 1,
+    "testDrop": true,
+    "description": "American-flag engraved Glock 45 with patriotic slide work. Limited-edition look, full Gen 5 performance underneath.",
+    "tags": ["Engraved slide", "Limited edition"],
+    "stats": { "damage": 36, "range": 46, "fireRate": 78, "recoil": 20 }
+  },
+  {
+    "id": "glock-17-gen3-p80",
+    "name": "GLOCK 17 GEN 3 P80",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "testDrop": true,
+    "description": "Polymer80 framed Glock 17 Gen 3 build. Custom frame ergonomics on the classic full-size 9mm.",
+    "tags": ["Custom frame", "Full-size"],
+    "stats": { "damage": 32, "range": 42, "fireRate": 75, "recoil": 22 }
+  },
+  {
+    "id": "p320-sig",
+    "name": "P320 SIG",
+    "type": "weapon",
+    "rarity": "Uncommon",
+    "tier": 1,
+    "testDrop": true,
+    "description": "Sig Sauer P320 modular 9mm. Striker-fired with a serialized chassis — versatile and accurate.",
+    "tags": ["Modular", "Striker-fired"],
+    "stats": { "damage": 34, "range": 44, "fireRate": 75, "recoil": 21 }
+  },
+  {
+    "id": "ruger-57-binary",
+    "name": "RUGER 5.7 BINARY",
+    "type": "weapon",
+    "rarity": "Rare",
+    "tier": 1,
+    "description": "Ruger 5.7 with binary trigger conversion. Fires on pull AND release for a devastating cyclic rate.",
+    "tags": ["Binary trigger", "5.7x28"],
+    "stats": { "damage": 38, "range": 48, "fireRate": 90, "recoil": 22 }
+  },
+  {
+    "id": "glock-21c",
+    "name": "GLOCK 21C",
+    "type": "weapon",
+    "rarity": "Rare",
+    "tier": 1,
+    "description": "Compensated .45 ACP Glock 21. Heavy-hitting rounds with a ported barrel to control muzzle climb.",
+    "tags": [".45 ACP", "Compensated"],
+    "stats": { "damage": 42, "range": 44, "fireRate": 68, "recoil": 24 }
+  },
+  {
+    "id": "glock-31-gen5-switch",
+    "name": "GLOCK 31 GEN 5 SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1,
+    "description": "Gen 5 Glock 31 chambered in .357 SIG with an auto switch installed. Full-auto pistol fire — extremely illegal, extremely dangerous.",
+    "tags": ["Full-auto switch", ".357 SIG"],
+    "stats": { "damage": 40, "range": 44, "fireRate": 95, "recoil": 28 }
+  },
+  {
+    "id": "glock-45-gen5-switch",
+    "name": "GLOCK 45 GEN 5 SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1,
+    "description": "Gen 5 Glock 45 modified with a full-auto switch. Crossover frame chewing through 9mm at rifle-like cyclic rates.",
+    "tags": ["Full-auto switch", "Crossover"],
+    "stats": { "damage": 38, "range": 46, "fireRate": 95, "recoil": 28 }
+  },
+  {
+    "id": "micro-draco-banana",
+    "name": "MICRO DRACO BANANA",
+    "type": "weapon",
+    "rarity": "Legendary",
+    "tier": 1.5,
+    "description": "Micro Draco AK pistol with a 30-round banana magazine. Compact 7.62x39 brute — short, loud, and devastating up close.",
+    "tags": ["7.62x39", "Banana mag"],
+    "stats": { "damage": 60, "range": 55, "fireRate": 88, "recoil": 38 }
+  },
+  {
+    "id": "mpa-defender-c",
+    "name": "MPA DEFENDER C",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "MasterPiece Arms Defender C 9mm carbine/pistol. Side-cocking blowback action with a long sight radius.",
+    "tags": ["9mm carbine", "Blowback"],
+    "stats": { "damage": 44, "range": 60, "fireRate": 82, "recoil": 24 }
+  },
+  {
+    "id": "4-inch-arp",
+    "name": "4 INCH ARP",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Short-barreled AR pistol in 5.56. Compact and punchy — high cyclic rate in a wrist-snapping package.",
+    "tags": ["AR pistol", "5.56"],
+    "stats": { "damage": 50, "range": 58, "fireRate": 86, "recoil": 30 }
+  },
+  {
+    "id": "mini-762-arp",
+    "name": "MINI 762 ARP",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Mini AR pistol chambered in 7.62x39. AK-caliber rounds in an AR platform — heavy stopping power, short barrel.",
+    "tags": ["7.62x39", "AR pistol"],
+    "stats": { "damage": 55, "range": 58, "fireRate": 82, "recoil": 34 }
+  },
+  {
+    "id": "glock-19-gen5-switch",
+    "name": "GLOCK 19 GEN 5 SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Gen 5 Glock 19 with an auto switch. Compact frame running full-auto — barely controllable, devastating in bursts.",
+    "tags": ["Full-auto switch", "Compact"],
+    "stats": { "damage": 36, "range": 44, "fireRate": 95, "recoil": 30 }
+  },
+  {
+    "id": "glock-22-gen4-red-switch",
+    "name": "GLOCK 22 GEN 4 RED SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Gen 4 Glock 22 in .40 S&W with a red full-auto switch. Hard-hitting rounds at rifle cyclic rates.",
+    "tags": ["Full-auto switch", ".40 S&W"],
+    "stats": { "damage": 40, "range": 44, "fireRate": 95, "recoil": 32 }
+  },
+  {
+    "id": "glock-22-gen4-blue-switch",
+    "name": "GLOCK 22 GEN 4 BLUE SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Gen 4 Glock 22 with a blue auto switch. .40 caliber full-auto firepower in a service pistol frame.",
+    "tags": ["Full-auto switch", ".40 S&W"],
+    "stats": { "damage": 40, "range": 44, "fireRate": 95, "recoil": 32 }
+  },
+  {
+    "id": "dagger-p80-glock-switch",
+    "name": "DAGGER P80 GLOCK SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Dagger / Polymer80 Glock-pattern build with a full-auto switch. Custom frame, automatic fire, street-level chaos.",
+    "tags": ["Full-auto switch", "Custom frame"],
+    "stats": { "damage": 38, "range": 44, "fireRate": 95, "recoil": 30 }
+  },
+  {
+    "id": "glock-22-gen4-green-switch",
+    "name": "GLOCK 22 GEN 4 GREEN SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Gen 4 Glock 22 with a green auto switch. Same .40 cal full-auto punch with a unique tell.",
+    "tags": ["Full-auto switch", ".40 S&W"],
+    "stats": { "damage": 40, "range": 44, "fireRate": 95, "recoil": 32 }
+  },
+  {
+    "id": "glock-22-gen4-purple-switch",
+    "name": "GLOCK 22 GEN 4 PURPLE SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Gen 4 Glock 22 with a purple auto switch. Flashy plate, full-auto .40 caliber underneath.",
+    "tags": ["Full-auto switch", ".40 S&W"],
+    "stats": { "damage": 40, "range": 44, "fireRate": 95, "recoil": 32 }
+  },
+  {
+    "id": "glock-19-gen5-mos-switch",
+    "name": "GLOCK 19 GEN 5 MOS SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 1.5,
+    "description": "Gen 5 Glock 19 MOS (optic ready) with a full-auto switch. Red-dot mounted, automatic 9mm fire.",
+    "tags": ["Full-auto switch", "MOS optic"],
+    "stats": { "damage": 36, "range": 46, "fireRate": 95, "recoil": 30 }
+  },
+  {
+    "id": "binary-draco-black",
+    "name": "BINARY DRACO BLACK",
+    "type": "weapon",
+    "rarity": "Legendary",
+    "tier": 2,
+    "description": "Blacked-out Draco AK pistol with binary trigger. 7.62x39 fired on pull AND release — top-tier street firepower.",
+    "tags": ["Binary trigger", "7.62x39"],
+    "stats": { "damage": 65, "range": 60, "fireRate": 92, "recoil": 40 }
+  },
+  {
+    "id": "75-inch-arp",
+    "name": "7.5 INCH ARP",
+    "type": "weapon",
+    "rarity": "Legendary",
+    "tier": 2,
+    "description": "7.5-inch barrel AR pistol in 5.56. Longer barrel for improved velocity and accuracy with rifle-caliber stopping power.",
+    "tags": ["AR pistol", "5.56"],
+    "stats": { "damage": 58, "range": 70, "fireRate": 86, "recoil": 30 }
+  },
+  {
+    "id": "binary-4-inch-arp",
+    "name": "BINARY 4 INCH ARP",
+    "type": "weapon",
+    "rarity": "Legendary",
+    "tier": 2,
+    "description": "Short AR pistol with binary trigger conversion. Pull-and-release firing makes the cyclic rate brutal.",
+    "tags": ["Binary trigger", "AR pistol"],
+    "stats": { "damage": 55, "range": 60, "fireRate": 96, "recoil": 34 }
+  },
+  {
+    "id": "illegal-white-arp",
+    "name": "ILLEGAL WHITE ARP",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 2,
+    "description": "White-finish AR pistol with off-paper modifications. Visually loud, mechanically aggressive.",
+    "tags": ["Custom build", "AR pistol"],
+    "stats": { "damage": 52, "range": 64, "fireRate": 88, "recoil": 30 }
+  },
+  {
+    "id": "glock-40-mos-switch",
+    "name": "GLOCK 40 MOS SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 2,
+    "description": "Long-slide Glock 40 MOS in 10mm with auto switch. Optic-ready, full-auto, hand-cannon class.",
+    "tags": ["Full-auto switch", "10mm Auto"],
+    "stats": { "damage": 48, "range": 50, "fireRate": 92, "recoil": 34 }
+  },
+  {
+    "id": "illegal-glock-24-gen5-switch",
+    "name": "ILLEGAL GLOCK 24 GEN 5 SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 2,
+    "description": "Long-slide Gen 5 Glock 24 in .40 S&W with auto switch. Extended sight radius, full-auto fire — street legend.",
+    "tags": ["Full-auto switch", "Long slide"],
+    "stats": { "damage": 44, "range": 50, "fireRate": 94, "recoil": 32 }
+  },
+  {
+    "id": "glock-23-gen5-switch",
+    "name": "GLOCK 23 GEN 5 SWITCH",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 2,
+    "description": "Compact Gen 5 Glock 23 in .40 S&W with full-auto switch. Concealable hand-cannon at rifle cyclic rates.",
+    "tags": ["Full-auto switch", ".40 S&W"],
+    "stats": { "damage": 40, "range": 44, "fireRate": 95, "recoil": 32 }
+  },
+  {
+    "id": "punisher-p80-gen4",
+    "name": "PUNISHER P80 GEN 4",
+    "type": "weapon",
+    "rarity": "Epic",
+    "tier": 2,
+    "description": "Punisher-themed Polymer80 Gen 4 build. Custom slide art over a hard-running full-auto capable frame.",
+    "tags": ["Custom build", "Themed"],
+    "stats": { "damage": 42, "range": 46, "fireRate": 92, "recoil": 30 }
   }
 ]
