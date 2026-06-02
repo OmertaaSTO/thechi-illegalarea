@@ -57,12 +57,66 @@ export function RandomWheel() {
     [],
   );
 
-  const pickFinal = (): Item => {
-    if (cat === "firearms" && tier === 1 && switchPool.length > 0 && Math.random() < 0.15) {
-      return switchPool[Math.floor(Math.random() * switchPool.length)];
-    }
-    return pool[Math.floor(Math.random() * pool.length)];
+  const bigGunPool = useMemo(
+    () => weapons.filter((w) => /draco|arp|ar\b|ak|rifle|binary/i.test(w.name)),
+    [],
+  );
+
+  const rand = (min: number, max: number) => min + Math.random() * (max - min);
+
+  type RarityWeights = Partial<Record<Item["rarity"], number>>;
+
+  const TIER_CONFIG: Record<string, {
+    switchChance: () => number;
+    bigGunChance: () => number;
+    rarityWeights: RarityWeights;
+  }> = {
+    "1": {
+      switchChance: () => rand(0.10, 0.15),
+      bigGunChance: () => 0,
+      rarityWeights: { Common: 50, Uncommon: 50, Rare: 35, Epic: 20 },
+    },
+    "1.5": {
+      switchChance: () => rand(0.15, 0.17),
+      bigGunChance: () => rand(0.13, 0.17),
+      rarityWeights: { Common: 35, Uncommon: 35, Rare: 30, Epic: 25, Legendary: 10 },
+    },
+    "2": {
+      switchChance: () => rand(0.20, 0.25),
+      bigGunChance: () => rand(0.19, 0.23),
+      rarityWeights: { Common: 30, Uncommon: 30, Rare: 30, Epic: 25, Legendary: 10 },
+    },
   };
+
+  const weightedPick = (items: Item[], weights: RarityWeights): Item => {
+    const scored = items.map((i) => ({ i, w: weights[i.rarity] ?? 0 }));
+    const total = scored.reduce((s, x) => s + x.w, 0);
+    if (total <= 0) return items[Math.floor(Math.random() * items.length)];
+    let r = Math.random() * total;
+    for (const { i, w } of scored) {
+      r -= w;
+      if (r <= 0) return i;
+    }
+    return scored[scored.length - 1].i;
+  };
+
+  const pickFinal = (): Item => {
+    if (cat !== "firearms") return pool[Math.floor(Math.random() * pool.length)];
+    const cfg = TIER_CONFIG[String(tier)];
+    if (!cfg) return pool[Math.floor(Math.random() * pool.length)];
+
+    const inPool = (arr: Item[]) => arr.filter((x) => pool.includes(x));
+    const switches = inPool(switchPool);
+    if (switches.length && Math.random() < cfg.switchChance()) {
+      return switches[Math.floor(Math.random() * switches.length)];
+    }
+    const bigs = inPool(bigGunPool);
+    if (bigs.length && Math.random() < cfg.bigGunChance()) {
+      return bigs[Math.floor(Math.random() * bigs.length)];
+    }
+    return weightedPick(pool, cfg.rarityWeights);
+  };
+
 
   const buildStrip = (winner: Item): Item[] => {
     const arr: Item[] = [];
