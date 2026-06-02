@@ -52,25 +52,47 @@ export function RandomWheel() {
     setReel([]);
   };
 
-  const roll = () => {
+  const switchPool = useMemo(
+    () => weapons.filter((w) => /switch/i.test(w.name)),
+    [],
+  );
+
+  const pickFinal = (): Item => {
+    // Tier 1 firearms: 15% chance to pull a switch instead
+    if (cat === "firearms" && tier === 1 && switchPool.length > 0 && Math.random() < 0.15) {
+      return switchPool[Math.floor(Math.random() * switchPool.length)];
+    }
+    return pool[Math.floor(Math.random() * pool.length)];
+  };
+
+  const roll = async () => {
     if (pool.length === 0) return;
     setRolling(true);
     setResults([]);
-    setReel([]);
+    setReel(Array(slotCount).fill(undefined as unknown as Item));
 
-    let ticks = 0;
-    const totalTicks = 22;
-    const interval = setInterval(() => {
-      setReel(Array.from({ length: slotCount }, () => pool[Math.floor(Math.random() * pool.length)]));
-      ticks++;
-      if (ticks >= totalTicks) {
-        clearInterval(interval);
-        const final = Array.from({ length: slotCount }, () => pool[Math.floor(Math.random() * pool.length)]);
-        setReel(final);
-        setResults(final);
-        setRolling(false);
+    const finals: Item[] = [];
+    for (let slot = 0; slot < slotCount; slot++) {
+      const ticks = 14;
+      for (let t = 0; t < ticks; t++) {
+        await new Promise((r) => setTimeout(r, 60));
+        setReel((prev) => {
+          const next = [...prev];
+          next[slot] = pool[Math.floor(Math.random() * pool.length)];
+          return next;
+        });
       }
-    }, 80);
+      const final = pickFinal();
+      finals.push(final);
+      setReel((prev) => {
+        const next = [...prev];
+        next[slot] = final;
+        return next;
+      });
+      await new Promise((r) => setTimeout(r, 250));
+    }
+    setResults(finals);
+    setRolling(false);
   };
 
   return (
