@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Search } from "lucide-react";
 import { items, type Item, type Rarity, rarityClass, rarityDot } from "@/data/items";
 import { ItemModal } from "./ItemModal";
@@ -10,6 +10,15 @@ export function CatalogSection() {
   const [rarity, setRarity] = useState<"All" | Rarity>("All");
   const [q, setQ] = useState("");
   const [selected, setSelected] = useState<Item | null>(null);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const detail = (e as CustomEvent).detail as "weapon" | "drug" | undefined;
+      if (detail === "weapon" || detail === "drug") setType(detail);
+    };
+    window.addEventListener("catalog:set-type", handler);
+    return () => window.removeEventListener("catalog:set-type", handler);
+  }, []);
 
   const list = useMemo(
     () =>
@@ -23,7 +32,7 @@ export function CatalogSection() {
   );
 
   return (
-    <section id="catalog" className="mx-auto max-w-6xl px-6 py-16">
+    <section id="catalog" className="scroll-mt-16 mx-auto max-w-6xl px-6 py-16">
       <h2 className="font-display text-4xl font-black tracking-tight sm:text-5xl">Weapon &amp; Drug Catalog</h2>
       <p className="mt-3 max-w-2xl text-sm text-muted-foreground">
         A full browsable list of every major weapon and drug item, what it is good for, and what to use or stockpile in the city before they hit the random rotation.
