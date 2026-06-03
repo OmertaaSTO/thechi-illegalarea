@@ -127,7 +127,7 @@ export function RandomWheel() {
   const [animateOffset, setAnimateOffset] = useState(true);
   const [landed, setLanded] = useState(false);
   const reelRef = useRef<HTMLDivElement | null>(null);
-  const [tileWidth, setTileWidth] = useState(112);
+  
 
   const TEST_DROP_NAMES = useMemo(
     () =>
