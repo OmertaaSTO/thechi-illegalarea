@@ -42,15 +42,38 @@ export function RandomWheel() {
 
   const totalRolls = cat === "firearms" ? SLOT_COUNT[String(tier)] : 2;
 
+  const TEST_DROP_NAMES = useMemo(
+    () =>
+      new Set([
+        "S&W SD40 TAN",
+        "FN 502 TACTICAL",
+        "GLOCK 19X COYOTE",
+        "GLOCK 45 CAMO",
+        "ROCK FN57",
+        "GLOCK 17 BLACK",
+        "M&P 9 2.0",
+        "PSA P80 GLOCK 19",
+        "GLOCK 20C",
+        "KAVORKA GLOCK 43X",
+        "PSA GLOCK 19",
+        "GLOCK 45 GEN 5",
+        "GLOCK 45 AMERICAN",
+        "GLOCK 17 GEN 3 P80",
+        "P320 SIG",
+      ]),
+    [],
+  );
+
   const pool = useMemo(() => {
     if (cat === "firearms") {
-      if (tier === "test") return weapons.filter((w) => w.testDrop);
-      return weapons.filter((w) => w.tier === tier);
+      if (tier === "test") return weapons.filter((w) => TEST_DROP_NAMES.has(w.name));
+      // All non-test tiers can pull from any tier's guns
+      return weapons;
     }
     if (tier === "test" || tier === 1) return drugs.filter((d) => ["Common", "Uncommon"].includes(d.rarity));
     if (tier === 1.5) return drugs.filter((d) => ["Uncommon", "Rare"].includes(d.rarity));
     return drugs.filter((d) => ["Rare", "Epic", "Legendary"].includes(d.rarity));
-  }, [cat, tier]);
+  }, [cat, tier, TEST_DROP_NAMES]);
 
   const switchPool = useMemo(
     () => weapons.filter((w) => /switch/i.test(w.name)),
