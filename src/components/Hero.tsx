@@ -2,6 +2,19 @@ import { Package, Box, FolderOpen } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function Hero() {
+  const scrollTo = (id: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
+  const scrollToCatalog = (mode: "weapon" | "drug") => (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.dispatchEvent(new CustomEvent("catalog:set-type", { detail: mode }));
+    const el = document.getElementById("catalog");
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   return (
     <section className="relative isolate overflow-hidden">
       <div
@@ -28,19 +41,22 @@ export function Hero() {
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
-            href="#supply-drop"
+            href="#random-wheel"
+            onClick={scrollTo("random-wheel")}
             className="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground shadow-md transition hover:opacity-90"
           >
             <Box className="h-4 w-4" /> Open supply drop
           </a>
           <a
-            href="#weapon-catalog"
+            href="#catalog"
+            onClick={scrollToCatalog("weapon")}
             className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
           >
             <Package className="h-4 w-4" /> View all weapons
           </a>
           <a
-            href="#weapon-catalog"
+            href="#catalog"
+            onClick={scrollToCatalog("drug")}
             className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
           >
             <FolderOpen className="h-4 w-4" /> View all drugs
