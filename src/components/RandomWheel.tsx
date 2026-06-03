@@ -226,7 +226,7 @@ export function RandomWheel() {
     setLanded(false);
     await new Promise((r) => requestAnimationFrame(() => r(null)));
     const tw = measureTile();
-    setTileWidth(tw);
+    
     await new Promise((r) => requestAnimationFrame(() => r(null)));
     const jitter = (Math.random() - 0.5) * (tw * 0.3);
     const target = WINNER_INDEX * tw - CENTER_INDEX * tw + jitter;
