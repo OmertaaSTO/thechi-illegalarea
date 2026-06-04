@@ -174,7 +174,8 @@ export function RandomWheel() {
   ): Item => {
     const cfg = WEAPON_TIER_CONFIG[String(tier)];
     const eligible = pool.filter((w) => {
-      if ((counts.perName.get(w.name) ?? 0) >= 2) return false;
+      const cap = w.rarity === "Epic" || w.rarity === "Legendary" ? 1 : 2;
+      if ((counts.perName.get(w.name) ?? 0) >= cap) return false;
       if (isSwitch(w) && counts.switches >= 2) return false;
       if (isBigGun(w) && counts.bigs >= 2) return false;
       return true;
