@@ -1,4 +1,4 @@
-import { Package, Box, FolderOpen } from "lucide-react";
+import { Package, Box, FolderOpen, BookOpen } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 export function Hero() {
@@ -60,6 +60,13 @@ export function Hero() {
             className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
           >
             <FolderOpen className="h-4 w-4" /> View all drugs
+          </a>
+          <a
+            href="#skill-information"
+            onClick={scrollTo("skill-information")}
+            className="inline-flex items-center gap-2 rounded-md border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground transition hover:bg-accent"
+          >
+            <BookOpen className="h-4 w-4" /> View skill information
           </a>
         </div>
       </div>
