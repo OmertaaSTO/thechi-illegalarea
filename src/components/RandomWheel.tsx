@@ -433,7 +433,7 @@ export function RandomWheel() {
                 </div>
               )}
             </div>
-            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {results.map((r, idx) => (
                 <button
                   key={`${r.item.id}-${idx}`}
