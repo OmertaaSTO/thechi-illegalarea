@@ -156,10 +156,13 @@ export function RandomWheel() {
     if (tier === "test") return weapons.filter((w) => TEST_DROP_NAMES.has(w.name));
     if (tier === 1) return weapons.filter((w) => (w.tier ?? 1) === 1);
     if (tier === 1.5) return weapons.filter((w) => (w.tier ?? 1) <= 1.5);
-    return weapons;
+    return weapons.filter((w) => w.rarity !== "Common");
   }, [tier, TEST_DROP_NAMES]);
 
-  const drugPool = useMemo(() => drugs, []);
+  const drugPool = useMemo(
+    () => (tier === 2 ? drugs.filter((d) => d.rarity !== "Common") : drugs),
+    [tier],
+  );
 
   const totalSpins =
     cat === "firearms" ? WEAPON_SLOTS[String(tier)] : DRUG_TYPES[String(tier)];
