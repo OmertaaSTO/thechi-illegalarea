@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/Hero";
 import { RandomWheel } from "@/components/RandomWheel";
 import { CatalogSection } from "@/components/CatalogSection";
+import { SkillInformation } from "@/components/SkillInformation";
 import { HashModals } from "@/components/HashModals";
 
 export const Route = createFileRoute("/")({
@@ -20,6 +21,7 @@ function Index() {
       <Hero />
       <RandomWheel />
       <CatalogSection />
+      <SkillInformation />
       <footer className="border-t border-border px-6 py-8 text-center text-xs text-muted-foreground">
         <div>The Chi: Cinematic V1 · Illegal Area Helper</div>
         <a
