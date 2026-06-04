@@ -67,7 +67,7 @@ const WEAPON_TIER_CONFIG: Record<string, {
     switchChance: () => rand(0.20, 0.25),
     bigGunChance: () => rand(0.19, 0.23),
     rarityWeights: () => ({
-      Common: rand(28, 35),
+      Common: 0,
       Uncommon: rand(40, 45),
       Rare: rand(28, 30),
       Epic: rand(19, 20),
@@ -80,7 +80,7 @@ const DRUG_TIER_WEIGHTS: Record<string, RarityWeights> = {
   test: { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
   "1": { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
   "1.5": { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
-  "2": { Common: 30, Uncommon: 45, Rare: 30, Epic: 25, Legendary: 28 },
+  "2": { Common: 0, Uncommon: 45, Rare: 30, Epic: 25, Legendary: 28 },
 };
 
 function weightedPick(items: Item[], weights: RarityWeights): Item {
