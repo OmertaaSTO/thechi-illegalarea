@@ -20,25 +20,23 @@ function Index() {
     <main className="min-h-screen bg-background text-foreground">
       <Hero />
       <RandomWheel />
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="h-px bg-border" />
+      </div>
       <CatalogSection />
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="h-px bg-border" />
+      </div>
       <SkillInformation />
       <footer className="border-t border-border px-6 py-8 text-center text-xs text-muted-foreground">
         <div>The Chi: Cinematic V1 · Illegal Area Helper</div>
         <a
-          href="https://thechiroblox.lovable.app/"
+          href="https://thechirbxforums.lovable.app"
           target="_blank"
           rel="noreferrer"
           className="mt-2 block text-foreground underline-offset-4 hover:underline"
         >
           The Chi: Cinematic · Forums
-        </a>
-        <a
-          href="https://thechi-factioncenter.lovable.app/"
-          target="_blank"
-          rel="noreferrer"
-          className="mt-1 block text-foreground underline-offset-4 hover:underline"
-        >
-          The Chi: Cinematic · Faction Center
         </a>
         <a
           href="https://the-chi-cinematic-v1.fandom.com/wiki/The_Chi:_Cinematic_V1_Wiki"
