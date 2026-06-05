@@ -38,7 +38,7 @@ function Index() {
         >
           The Chi: Cinematic · Forums
         </a>
-        <
+        <a
           href="https://the-chi-cinematic-v1.fandom.com/wiki/The_Chi:_Cinematic_V1_Wiki"
           target="_blank"
           rel="noreferrer"
