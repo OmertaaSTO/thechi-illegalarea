@@ -273,11 +273,18 @@ export function RandomWheel() {
         setRolling(false);
         return;
       }
-      const counts = { perName: new Map<string, number>(), switches: 0, bigs: 0 };
+      const counts = {
+        perName: new Map<string, number>(),
+        switches: 0,
+        bigs: 0,
+        rarities: new Map<Item["rarity"], number>(),
+        rarityCaps: tier === 2 ? tier2Caps() : null,
+      };
       const finals: RollResult[] = [];
       for (let i = 0; i < totalSpins; i++) {
         const w = pickWeapon(weaponPool, counts);
         counts.perName.set(w.name, (counts.perName.get(w.name) ?? 0) + 1);
+        counts.rarities.set(w.rarity, (counts.rarities.get(w.rarity) ?? 0) + 1);
         if (isSwitch(w)) counts.switches += 1;
         if (isBigGun(w)) counts.bigs += 1;
         await spinTo(w, weaponPool);
