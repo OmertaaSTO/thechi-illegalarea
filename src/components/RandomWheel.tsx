@@ -68,8 +68,8 @@ const WEAPON_TIER_CONFIG: Record<string, {
     bigGunChance: () => rand(0.19, 0.23),
     rarityWeights: () => ({
       Common: 0,
-      Uncommon: rand(40, 45),
-      Rare: rand(28, 30),
+      Uncommon: rand(15, 25),
+      Rare: rand(25, 30),
       Epic: rand(19, 20),
       Legendary: 19,
     }),
@@ -80,8 +80,20 @@ const DRUG_TIER_WEIGHTS: Record<string, RarityWeights> = {
   test: { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
   "1": { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
   "1.5": { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
-  "2": { Common: 0, Uncommon: 45, Rare: 30, Epic: 25, Legendary: 28 },
+  "2": { Common: 0, Uncommon: 20, Rare: 28, Epic: 20, Legendary: 19 },
 };
+
+// Tier 2 per-rarity caps (max count of items at that rarity per spin)
+type RarityCaps = Partial<Record<Item["rarity"], number>>;
+const randInt = (min: number, max: number) =>
+  min + Math.floor(Math.random() * (max - min + 1));
+const tier2Caps = (): RarityCaps => ({
+  Common: 0,
+  Uncommon: randInt(2, 4),
+  Rare: 4,
+  Epic: randInt(2, 4),
+  Legendary: randInt(2, 3),
+});
 
 function weightedPick(items: Item[], weights: RarityWeights): Item {
   const scored = items.map((i) => ({ i, w: weights[i.rarity] ?? 0 }));
@@ -173,7 +185,13 @@ export function RandomWheel() {
   // Pick a weapon obeying tier weights + per-roll caps
   const pickWeapon = (
     pool: Item[],
-    counts: { perName: Map<string, number>; switches: number; bigs: number },
+    counts: {
+      perName: Map<string, number>;
+      switches: number;
+      bigs: number;
+      rarities: Map<Item["rarity"], number>;
+      rarityCaps: RarityCaps | null;
+    },
   ): Item => {
     const cfg = WEAPON_TIER_CONFIG[String(tier)];
     const eligible = pool.filter((w) => {
@@ -181,6 +199,10 @@ export function RandomWheel() {
       if ((counts.perName.get(w.name) ?? 0) >= cap) return false;
       if (isSwitch(w) && counts.switches >= 2) return false;
       if (isBigGun(w) && counts.bigs >= 2) return false;
+      if (counts.rarityCaps) {
+        const rcap = counts.rarityCaps[w.rarity];
+        if (rcap !== undefined && (counts.rarities.get(w.rarity) ?? 0) >= rcap) return false;
+      }
       return true;
     });
     const fallback = eligible.length ? eligible : pool;
@@ -251,11 +273,18 @@ export function RandomWheel() {
         setRolling(false);
         return;
       }
-      const counts = { perName: new Map<string, number>(), switches: 0, bigs: 0 };
+      const counts = {
+        perName: new Map<string, number>(),
+        switches: 0,
+        bigs: 0,
+        rarities: new Map<Item["rarity"], number>(),
+        rarityCaps: tier === 2 ? tier2Caps() : null,
+      };
       const finals: RollResult[] = [];
       for (let i = 0; i < totalSpins; i++) {
         const w = pickWeapon(weaponPool, counts);
         counts.perName.set(w.name, (counts.perName.get(w.name) ?? 0) + 1);
+        counts.rarities.set(w.rarity, (counts.rarities.get(w.rarity) ?? 0) + 1);
         if (isSwitch(w)) counts.switches += 1;
         if (isBigGun(w)) counts.bigs += 1;
         await spinTo(w, weaponPool);
@@ -269,15 +298,22 @@ export function RandomWheel() {
       const legendaryCap = DRUG_LEGENDARY_CAP[tierKey];
       const wanted = DRUG_TYPES[tierKey];
       const total = DRUG_TOTAL[tierKey];
+      const rarityCaps: RarityCaps | null = tier === 2 ? tier2Caps() : null;
 
       const picked: Item[] = [];
+      const rarityCounts = new Map<Item["rarity"], number>();
       let legendaryCount = 0;
       let guard = 0;
       while (picked.length < wanted && guard++ < 400) {
         const candidate = weightedPick(drugPool, weights);
         if (picked.some((p) => p.id === candidate.id)) continue;
         if (candidate.rarity === "Legendary" && legendaryCount >= legendaryCap) continue;
+        if (rarityCaps) {
+          const rcap = rarityCaps[candidate.rarity];
+          if (rcap !== undefined && (rarityCounts.get(candidate.rarity) ?? 0) >= rcap) continue;
+        }
         if (candidate.rarity === "Legendary") legendaryCount += 1;
+        rarityCounts.set(candidate.rarity, (rarityCounts.get(candidate.rarity) ?? 0) + 1);
         picked.push(candidate);
       }
 
