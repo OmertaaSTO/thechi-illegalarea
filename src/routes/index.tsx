@@ -4,6 +4,7 @@ import { RandomWheel } from "@/components/RandomWheel";
 import { CatalogSection } from "@/components/CatalogSection";
 import { SkillInformation } from "@/components/SkillInformation";
 import { HashModals } from "@/components/HashModals";
+import { Snowfall } from "@/components/Snowfall";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -18,6 +19,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Snowfall count={40} />
       <Hero />
       <RandomWheel />
       <div className="mx-auto max-w-5xl px-6">
