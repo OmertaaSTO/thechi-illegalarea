@@ -19,6 +19,7 @@ export const Route = createFileRoute("/")({
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
+      <Snowfall count={40} />
       <Hero />
       <RandomWheel />
       <div className="mx-auto max-w-5xl px-6">
