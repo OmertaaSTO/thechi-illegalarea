@@ -68,8 +68,8 @@ const WEAPON_TIER_CONFIG: Record<string, {
     bigGunChance: () => rand(0.19, 0.23),
     rarityWeights: () => ({
       Common: 0,
-      Uncommon: rand(40, 45),
-      Rare: rand(28, 30),
+      Uncommon: rand(15, 25),
+      Rare: rand(25, 30),
       Epic: rand(19, 20),
       Legendary: 19,
     }),
@@ -80,8 +80,20 @@ const DRUG_TIER_WEIGHTS: Record<string, RarityWeights> = {
   test: { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
   "1": { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
   "1.5": { Common: 50, Uncommon: 30, Rare: 25, Epic: 20, Legendary: 20 },
-  "2": { Common: 0, Uncommon: 45, Rare: 30, Epic: 25, Legendary: 28 },
+  "2": { Common: 0, Uncommon: 20, Rare: 28, Epic: 20, Legendary: 19 },
 };
+
+// Tier 2 per-rarity caps (max count of items at that rarity per spin)
+type RarityCaps = Partial<Record<Item["rarity"], number>>;
+const randInt = (min: number, max: number) =>
+  min + Math.floor(Math.random() * (max - min + 1));
+const tier2Caps = (): RarityCaps => ({
+  Common: 0,
+  Uncommon: randInt(2, 4),
+  Rare: 4,
+  Epic: randInt(2, 4),
+  Legendary: randInt(2, 3),
+});
 
 function weightedPick(items: Item[], weights: RarityWeights): Item {
   const scored = items.map((i) => ({ i, w: weights[i.rarity] ?? 0 }));
