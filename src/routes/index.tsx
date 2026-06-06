@@ -4,6 +4,7 @@ import { RandomWheel } from "@/components/RandomWheel";
 import { CatalogSection } from "@/components/CatalogSection";
 import { SkillInformation } from "@/components/SkillInformation";
 import { HashModals } from "@/components/HashModals";
+import { Snowfall } from "@/components/Snowfall";
 
 export const Route = createFileRoute("/")({
   head: () => ({
