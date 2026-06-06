@@ -298,15 +298,22 @@ export function RandomWheel() {
       const legendaryCap = DRUG_LEGENDARY_CAP[tierKey];
       const wanted = DRUG_TYPES[tierKey];
       const total = DRUG_TOTAL[tierKey];
+      const rarityCaps: RarityCaps | null = tier === 2 ? tier2Caps() : null;
 
       const picked: Item[] = [];
+      const rarityCounts = new Map<Item["rarity"], number>();
       let legendaryCount = 0;
       let guard = 0;
       while (picked.length < wanted && guard++ < 400) {
         const candidate = weightedPick(drugPool, weights);
         if (picked.some((p) => p.id === candidate.id)) continue;
         if (candidate.rarity === "Legendary" && legendaryCount >= legendaryCap) continue;
+        if (rarityCaps) {
+          const rcap = rarityCaps[candidate.rarity];
+          if (rcap !== undefined && (rarityCounts.get(candidate.rarity) ?? 0) >= rcap) continue;
+        }
         if (candidate.rarity === "Legendary") legendaryCount += 1;
+        rarityCounts.set(candidate.rarity, (rarityCounts.get(candidate.rarity) ?? 0) + 1);
         picked.push(candidate);
       }
 
