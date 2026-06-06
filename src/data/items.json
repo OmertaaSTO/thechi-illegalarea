@@ -87,7 +87,7 @@
     "rarity": "Uncommon",
     "description": "Percocet 30mg pill. A strong dose that hits harder and lasts longer, popular with heavy users.",
     "tags": ["+30 Pain Relief", "+Heavy euphoria / numb"],
-    "stats": { "price": "$1500 - $2300", "effect": "Heavy pain relief, numb" }
+    "stats": { "price": "$750 - $1000", "effect": "Heavy pain relief, numb" }
   },
   {
     "id": "quagen",
