@@ -185,7 +185,13 @@ export function RandomWheel() {
   // Pick a weapon obeying tier weights + per-roll caps
   const pickWeapon = (
     pool: Item[],
-    counts: { perName: Map<string, number>; switches: number; bigs: number },
+    counts: {
+      perName: Map<string, number>;
+      switches: number;
+      bigs: number;
+      rarities: Map<Item["rarity"], number>;
+      rarityCaps: RarityCaps | null;
+    },
   ): Item => {
     const cfg = WEAPON_TIER_CONFIG[String(tier)];
     const eligible = pool.filter((w) => {
@@ -193,6 +199,10 @@ export function RandomWheel() {
       if ((counts.perName.get(w.name) ?? 0) >= cap) return false;
       if (isSwitch(w) && counts.switches >= 2) return false;
       if (isBigGun(w) && counts.bigs >= 2) return false;
+      if (counts.rarityCaps) {
+        const rcap = counts.rarityCaps[w.rarity];
+        if (rcap !== undefined && (counts.rarities.get(w.rarity) ?? 0) >= rcap) return false;
+      }
       return true;
     });
     const fallback = eligible.length ? eligible : pool;
