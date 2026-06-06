@@ -78,7 +78,7 @@
     "rarity": "Common",
     "description": "Percocet 10mg pill. A moderate painkiller dose with a smooth, calming effect.",
     "tags": ["+10 Pain Relief", "+Light euphoria / calm"],
-    "stats": { "price": "$900 - $1400", "effect": "Pain relief, light euphoria" }
+    "stats": { "price": "$500 - $1000", "effect": "Pain relief, light euphoria" }
   },
   {
     "id": "percocet-30",
@@ -87,7 +87,7 @@
     "rarity": "Uncommon",
     "description": "Percocet 30mg pill. A strong dose that hits harder and lasts longer, popular with heavy users.",
     "tags": ["+30 Pain Relief", "+Heavy euphoria / numb"],
-    "stats": { "price": "$1500 - $2300", "effect": "Heavy pain relief, numb" }
+    "stats": { "price": "$750 - $1000", "effect": "Heavy pain relief, numb" }
   },
   {
     "id": "quagen",
@@ -115,6 +115,213 @@
     "description": "A bag of methamphetamine crystals. Provides a strong stimulant rush, keeping users alert and moving fast.",
     "tags": ["Stamina Boost", "+Fast sprint / high alert"],
     "stats": { "price": "$1800 - $2600", "effect": "Stamina, sprint speed" }
+  },
+  {
+    "id": "marijuana-packs",
+    "name": "Marijuana (Packs)",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Sealed packs of street-grade marijuana. Mellow high, easy to move, a staple for small-time dealers.",
+    "tags": ["Relaxation", "+Light stamina regen"],
+    "stats": { "price": "$500 - $1000", "effect": "Relaxation, mild buzz" }
+  },
+  {
+    "id": "t189",
+    "name": "T189",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Generic oxycodone tablets imprinted with T189. Strong painkiller with a smooth, lasting high.",
+    "tags": ["+15 Pain Relief", "+Euphoria"],
+    "stats": { "price": "$1250 - $2000", "effect": "Pain relief, euphoria" }
+  },
+  {
+    "id": "heroin",
+    "name": "Heroin",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "A baggie of brown heroin. Heavy opioid high — slow body, intense numbness.",
+    "tags": ["Heavy Numb", "+Pain immunity"],
+    "stats": { "price": "$1,500 - $2,500", "effect": "Heavy numb, slowed body" }
+  },
+  {
+    "id": "mushrooms",
+    "name": "Mushrooms",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Dried psilocybin mushrooms. Strong hallucinogenic trip with distorted perception.",
+    "tags": ["Hallucinations", "+Perception shift"],
+    "stats": { "price": "$800 - $1,200", "effect": "Hallucinations" }
+  },
+  {
+    "id": "hulk-xanax",
+    "name": "Hulk Xanax",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Green Hulk-bar Xanax. Heavy benzo dose — calm, sedated, and zoned out.",
+    "tags": ["Heavy Calm", "+Sedation"],
+    "stats": { "price": "$800 - $1,200", "effect": "Sedation, calm" }
+  },
+  {
+    "id": "molly",
+    "name": "Molly",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Pure MDMA crystals. Euphoric rush with heightened energy and sensation.",
+    "tags": ["Euphoria", "+Stamina Regen"],
+    "stats": { "price": "$1,100 - $1,600", "effect": "Euphoria, stamina" }
+  },
+  {
+    "id": "g6-pill",
+    "name": "G6 Pill",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Street-pressed G6 pill. Stimulant blend that keeps users alert and active.",
+    "tags": ["Focus", "+Sprint Speed"],
+    "stats": { "price": "$1,200 - $1,700", "effect": "Focus, sprint speed" }
+  },
+  {
+    "id": "acid",
+    "name": "Acid",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "LSD tabs. Long-lasting hallucinogenic trip with vivid visuals.",
+    "tags": ["Hallucinations", "+Long duration"],
+    "stats": { "price": "$850 - $1,350", "effect": "Hallucinations, long trip" }
+  },
+  {
+    "id": "pcp",
+    "name": "PCP",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Phencyclidine dose. Dissociative high with reduced pain perception and aggression boost.",
+    "tags": ["Pain immunity", "+Aggression"],
+    "stats": { "price": "$1,100 - $1,600", "effect": "Pain immunity, aggression" }
+  },
+  {
+    "id": "pink-cocaine",
+    "name": "Pink Cocaine",
+    "type": "drug",
+    "rarity": "Legendary",
+    "description": "Tusi — a pink powder blend of MDMA, ketamine, and other compounds. Designer high, top-shelf prices.",
+    "tags": ["Designer high", "+Euphoria"],
+    "stats": { "price": "$15,000 - $20,000", "effect": "Designer euphoria" }
+  },
+  {
+    "id": "bagged-meth",
+    "name": "Bagged Meth",
+    "type": "drug",
+    "rarity": "Legendary",
+    "description": "Bulk-bagged crystal meth. Wholesale weight for moving serious volume.",
+    "tags": ["Bulk", "+High value"],
+    "stats": { "price": "$9,500 - $15,000", "effect": "Bulk stimulant" }
+  },
+  {
+    "id": "bagged-cocaine",
+    "name": "Bagged Cocaine",
+    "type": "drug",
+    "rarity": "Legendary",
+    "description": "Bulk-bagged cocaine. Wholesale weight, kingpin-tier resale value.",
+    "tags": ["Bulk", "+High value"],
+    "stats": { "price": "$10,000 - $15,000", "effect": "Bulk stimulant" }
+  },
+  {
+    "id": "fent-pills",
+    "name": "Fent Pills",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Pressed fentanyl pills, often disguised as oxy. Extremely potent, extremely dangerous.",
+    "tags": ["Extreme potency", "+Heavy numb"],
+    "stats": { "price": "$1,500 - $2,000", "effect": "Extreme opioid high" }
+  },
+  {
+    "id": "sealed-hi-tech-syrup",
+    "name": "[Sealed] Hi-Tech Syrup",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Factory-sealed Hi-Tech promethazine syrup. Untouched bottle, premium resale.",
+    "tags": ["Sealed", "+Armor"],
+    "stats": { "price": "$1,500 - $2,500", "effect": "Lean base, armor" }
+  },
+  {
+    "id": "sealed-promethazine-codeine",
+    "name": "[Sealed] Promethazine Codeine",
+    "type": "drug",
+    "rarity": "Rare",
+    "description": "Sealed bottle of promethazine with codeine. Classic lean ingredient, untouched.",
+    "tags": ["Sealed", "+Armor"],
+    "stats": { "price": "$1,500 - $1,750", "effect": "Lean base, armor" }
+  },
+  {
+    "id": "sealed-robitussin-ac",
+    "name": "[Sealed] Robitussin AC",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Factory-sealed Robitussin AC. Codeine cough syrup, lower potency lean base.",
+    "tags": ["Sealed", "+Light armor"],
+    "stats": { "price": "$900 - $1,500", "effect": "Light lean base" }
+  },
+  {
+    "id": "sealed-tussionex-syrup",
+    "name": "[Sealed] Tussionex Syrup",
+    "type": "drug",
+    "rarity": "Epic",
+    "description": "Sealed Tussionex hydrocodone syrup. Potent lean base, premium price.",
+    "tags": ["Sealed", "+Heavy Armor"],
+    "stats": { "price": "$2,000 - $2,500", "effect": "Heavy lean base" }
+  },
+  {
+    "id": "sealed-actavis-og",
+    "name": "[Sealed] Actavis OG",
+    "type": "drug",
+    "rarity": "Legendary",
+    "description": "Factory-sealed original Actavis prometh. Holy grail of lean — untouched, ultra rare.",
+    "tags": ["Sealed", "+Max Armor"],
+    "stats": { "price": "$5,000 - $7,000", "effect": "Top-shelf lean base" }
+  },
+  {
+    "id": "bb-hi-tech-syrup",
+    "name": "[Baby-Bottle Line] Hi-Tech Syrup",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Baby-bottle portioned Hi-Tech syrup. Single-serve street pour.",
+    "tags": ["Single serve", "+Light armor"],
+    "stats": { "price": "$450 - $700", "effect": "Light lean" }
+  },
+  {
+    "id": "bb-promethazine-codeine",
+    "name": "[Baby-Bottle Line] Promethazine Codeine",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Baby-bottle pour of promethazine codeine. Quick-serve lean.",
+    "tags": ["Single serve", "+Light armor"],
+    "stats": { "price": "$500 - $750", "effect": "Light lean" }
+  },
+  {
+    "id": "bb-robitussin-ac",
+    "name": "[Baby-Bottle Line] Robitussin AC",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Baby-bottle pour of Robitussin AC. Budget single-serve lean.",
+    "tags": ["Single serve", "+Light armor"],
+    "stats": { "price": "$300 - $500", "effect": "Budget lean" }
+  },
+  {
+    "id": "bb-tussionex-syrup",
+    "name": "[Baby-Bottle Line] Tussionex Syrup",
+    "type": "drug",
+    "rarity": "Common",
+    "description": "Baby-bottle pour of Tussionex syrup. Single-serve potent lean.",
+    "tags": ["Single serve", "+Armor"],
+    "stats": { "price": "$200 - $500", "effect": "Single-serve lean" }
+  },
+  {
+    "id": "bb-actavis-og",
+    "name": "[Baby-Bottle Line] Actavis OG",
+    "type": "drug",
+    "rarity": "Uncommon",
+    "description": "Baby-bottle pour of OG Actavis. Single-serve taste of the holy grail.",
+    "tags": ["Single serve", "+Armor"],
+    "stats": { "price": "$500 - $900", "effect": "Premium single-serve lean" }
   },
   {
     "id": "sw-sd40-tan",
