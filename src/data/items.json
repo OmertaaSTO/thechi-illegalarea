@@ -78,7 +78,7 @@
     "rarity": "Common",
     "description": "Percocet 10mg pill. A moderate painkiller dose with a smooth, calming effect.",
     "tags": ["+10 Pain Relief", "+Light euphoria / calm"],
-    "stats": { "price": "$900 - $1400", "effect": "Pain relief, light euphoria" }
+    "stats": { "price": "$500 - $1000", "effect": "Pain relief, light euphoria" }
   },
   {
     "id": "percocet-30",
