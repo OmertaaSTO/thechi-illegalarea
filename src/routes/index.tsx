@@ -21,7 +21,15 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       <Snowfall intensity="low" />
-      <MusicPlayer src="/music.mp3" />
+      <MusicPlayer
+        tracks={[
+          { title: "GK – YWTMU", src: "/music/1.mp3" },
+          { title: "Track 2", src: "/music/2.mp3" },
+          { title: "Track 3", src: "/music/3.mp3" },
+          { title: "Track 4", src: "/music/4.mp3" },
+          { title: "Track 5", src: "/music/5.mp3" },
+        ]}
+      />
       <Hero />
       <RandomWheel />
       <div className="mx-auto max-w-5xl px-6">
