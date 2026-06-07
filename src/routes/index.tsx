@@ -5,6 +5,7 @@ import { CatalogSection } from "@/components/CatalogSection";
 import { SkillInformation } from "@/components/SkillInformation";
 import { HashModals } from "@/components/HashModals";
 import { Snowfall } from "@/components/Snowfall";
+import { SnowfallControl, useSnowIntensity } from "@/components/SnowfallControl";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -17,9 +18,11 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const [intensity, setIntensity] = useSnowIntensity();
   return (
     <main className="min-h-screen bg-background text-foreground">
-      <Snowfall count={40} />
+      <Snowfall intensity={intensity} />
+      <SnowfallControl value={intensity} onChange={setIntensity} />
       <Hero />
       <RandomWheel />
       <div className="mx-auto max-w-5xl px-6">
